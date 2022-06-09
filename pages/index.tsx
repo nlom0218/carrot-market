@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className="grid gap-10 bg-slate-400 py-14 px-10">
-      <div className="rounded-3xl bg-white p-6 shadow-xl">
+    <div className=" mx-auto grid min-h-screen justify-items-center gap-10 bg-slate-400 p-20">
+      <div className=" w-80 max-w-xs rounded-3xl bg-white p-6 shadow-xl">
         <span className=" font-3xl text-3xl">Select Item</span>
         <div className=" my-2 flex justify-between">
           <span className=" text-gray-500">Grey Chair</span>
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           Checkout
         </div>
       </div>
-      <div className="overflow-hidden rounded-3xl  bg-white shadow-xl">
+      <div className="w-80  max-w-xs overflow-hidden  rounded-3xl bg-white shadow-xl">
         <div className=" bg-blue-500 p-6 pb-14">
           <span className=" text-2xl text-white">Profile</span>
         </div>
@@ -43,8 +43,42 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="rounded-3xl bg-white p-10 shadow-xl"></div>
-      <div className="rounded-3xl bg-white p-10 shadow-xl"></div>
+      <div className="w-80  max-w-xs rounded-3xl bg-white p-10 shadow-xl">
+        <div className=" mb-5 flex items-center justify-between">
+          <span>←</span>
+          <div className=" space-x-3">
+            <span>⭐️ 4.9</span>
+            <span className=" rounded-md p-2 shadow-xl">❤️</span>
+          </div>
+        </div>
+        <div className=" mb-5 h-72 bg-zinc-400" />
+        <div className=" flex flex-col">
+          <span className=" text-lg font-medium">Swoon Lounge</span>
+          <span className=" text-xs text-gray-500">Chair</span>
+          <div className=" mt-3 mb-5 flex items-center justify-between">
+            <div>
+              <input type="radio"></input>
+              <input type="radio"></input>
+              <input type="radio"></input>
+            </div>
+            <div className=" flex items-center space-x-5">
+              <button className=" flex aspect-square w-8 items-center justify-center rounded-lg bg-blue-200 p-1.5 text-xl  text-gray-500">
+                -
+              </button>
+              <span>1</span>
+              <button className=" flex aspect-square w-8 items-center justify-center rounded-lg bg-blue-200 p-1.5 text-xl  text-gray-500">
+                +
+              </button>
+            </div>
+          </div>
+          <div className=" flex items-center justify-between">
+            <span className="text-2xl font-medium">$450</span>
+            <button className=" rounded-lg bg-blue-500 py-2 px-8 text-center text-xs text-white">
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
