@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 const Home: NextPage = () => {
   return (
     <div className=" mx-auto grid min-h-screen justify-items-center gap-10 bg-slate-400 p-20">
+      우울하다...
       <div className=" w-80 max-w-xs rounded-3xl bg-white p-6 shadow-xl">
         <span className=" font-3xl text-3xl">Select Item</span>
         <div className=" my-2 flex justify-between">
