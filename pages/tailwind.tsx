@@ -37,7 +37,7 @@ const Tailwind = () => {
           Checkout
         </button>
       </div>
-      <div className="w-80  max-w-xs overflow-hidden  rounded-3xl bg-white shadow-xl">
+      <div className="group  w-80 max-w-xs  overflow-hidden rounded-3xl bg-white shadow-xl ">
         <div className=" bg-blue-500 p-6 pb-14">
           <span className=" text-2xl text-white">Profile</span>
         </div>
@@ -47,7 +47,7 @@ const Tailwind = () => {
               <span className=" text-sm text-gray-500">Orders</span>
               <span className=" font-medium">340</span>
             </div>
-            <div className=" h-24 w-24 rounded-full bg-gray-300" />
+            <div className=" h-24 w-24 rounded-full bg-gray-300 transition-colors group-hover:bg-green-300" />
             <div className=" flex flex-col items-center">
               <span className=" text-sm text-gray-500">Spent</span>
               <span className=" font-medium">$2,310</span>
@@ -95,6 +95,24 @@ const Tailwind = () => {
           </div>
         </div>
       </div>
+      <form className=" flex w-80 max-w-xs flex-col space-y-2 rounded-3xl bg-cyan-300 p-5 focus-within:bg-blue-300">
+        <input
+          type="text"
+          required
+          placeholder="Username"
+          className=" peer rounded-md border border-gray-400 p-1"
+        />
+        <span className=" hidden peer-invalid:block peer-invalid:text-red-500">
+          This input is invalid
+        </span>
+        <span className=" hidden peer-valid:block peer-valid:text-teal-500">
+          Awesome username
+        </span>
+        <span className=" peer-hover:text-black0 hidden peer-hover:block">
+          Hello
+        </span>
+        <input type="submit" value="Login" className=" bg-white" />
+      </form>
     </div>
   );
 };
