@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-const Tailwind = () => {
+const Tailwind: NextPage = () => {
   return (
     <div className=" mx-auto grid min-h-screen justify-items-center gap-10 bg-slate-300 p-20">
       <div className=" w-80 max-w-xs  justify-center rounded-3xl bg-white p-6 shadow-xl">
@@ -113,6 +113,24 @@ const Tailwind = () => {
         </span>
         <input type="submit" value="Login" className=" bg-white" />
       </form>
+      <details className=" select-none open:bg-indigo-500 open:text-white">
+        <summary className=" cursor-pointer">What is my fav. food.</summary>
+        <span>김치</span>
+      </details>
+      <ul className=" list-disc marker:text-teal-500">
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+      </ul>
+      <input
+        type="file"
+        className=" file:cursor-pointer file:rounded-xl file:border-0 file:bg-purple-500 file:px-5 
+        file:py-1 file:text-white file:transition-colors  file:hover:border-purple-400
+        file:hover:bg-white file:hover:text-purple-500"
+      />
+      <p className="first-letter:text-7xl first-letter:hover:text-purple-300">
+        Hello everone!
+      </p>
     </div>
   );
 };
