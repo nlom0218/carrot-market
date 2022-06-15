@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 
 const Tailwind: NextPage = () => {
   return (
-    <div className=" mx-auto grid min-h-screen justify-items-center gap-10 bg-slate-300 p-20">
-      <div className=" w-80 max-w-xs  justify-center rounded-3xl bg-white p-6 shadow-xl">
+    <div className=" mx-auto grid min-h-screen  gap-10 bg-slate-300 p-20">
+      <div className=" justify-center rounded-3xl bg-white p-6 shadow-xl sm:bg-red-400 sm:hover:bg-pink-300 md:bg-teal-500 lg:bg-indigo-400 xl:bg-yellow-400">
         <span className=" font-3xl text-3xl">Select Item</span>
         <ul>
           {[1, 2, 3, 4, 5].map((i) => (
@@ -37,7 +37,7 @@ const Tailwind: NextPage = () => {
           Checkout
         </button>
       </div>
-      <div className="group  w-80 max-w-xs  overflow-hidden rounded-3xl bg-white shadow-xl ">
+      <div className="group   overflow-hidden rounded-3xl bg-white shadow-xl ">
         <div className=" bg-blue-500 p-6 pb-14">
           <span className=" text-2xl text-white">Profile</span>
         </div>
@@ -59,7 +59,7 @@ const Tailwind: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-80  max-w-xs rounded-3xl bg-white p-10 shadow-xl">
+      <div className="rounded-3xl bg-white p-10 shadow-xl">
         <div className=" mb-5 flex items-center justify-between">
           <span>←</span>
           <div className=" space-x-3">
@@ -95,7 +95,7 @@ const Tailwind: NextPage = () => {
           </div>
         </div>
       </div>
-      <form className=" flex w-80 max-w-xs flex-col space-y-2 rounded-3xl bg-cyan-300 p-5 focus-within:bg-blue-300">
+      <form className=" flex flex-col space-y-2 rounded-3xl bg-cyan-300 p-5 focus-within:bg-blue-300">
         <input
           type="text"
           required
