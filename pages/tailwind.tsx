@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 
 const Tailwind: NextPage = () => {
   return (
-    <div className=" mx-auto grid min-h-screen  gap-10 bg-slate-300 p-20">
-      <div className=" justify-center rounded-3xl bg-white p-6 shadow-xl sm:bg-red-400 sm:hover:bg-pink-300 md:bg-teal-500 lg:bg-indigo-400 xl:bg-yellow-400">
+    <div className=" g mx-auto  grid min-h-screen gap-10 bg-slate-300 p-20 lg:grid-cols-2 xl:grid-cols-3 xl:place-content-center">
+      <div className=" flex flex-col justify-center rounded-3xl bg-white p-6 shadow-xl">
         <span className=" font-3xl text-3xl">Select Item</span>
         <ul>
           {[1, 2, 3, 4, 5].map((i) => (
@@ -38,7 +38,7 @@ const Tailwind: NextPage = () => {
         </button>
       </div>
       <div className="group   overflow-hidden rounded-3xl bg-white shadow-xl ">
-        <div className=" bg-blue-500 p-6 pb-14">
+        <div className=" bg-blue-500 p-6 pb-14 lg:pb-48 portrait:bg-indigo-500 landscape:bg-teal-500">
           <span className=" text-2xl text-white">Profile</span>
         </div>
         <div className=" relative -top-5 rounded-3xl bg-white p-6">
@@ -59,7 +59,7 @@ const Tailwind: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="rounded-3xl bg-white p-10 shadow-xl">
+      <div className="rounded-3xl bg-white p-10 shadow-xl lg:col-span-2 xl:col-span-1">
         <div className=" mb-5 flex items-center justify-between">
           <span>←</span>
           <div className=" space-x-3">
