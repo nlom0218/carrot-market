@@ -2,24 +2,16 @@ import type { NextPage } from "next";
 
 const Tailwind: NextPage = () => {
   return (
-    <div className=" g mx-auto  grid min-h-screen gap-10 bg-slate-300 p-20 lg:grid-cols-2 xl:grid-cols-3 xl:place-content-center">
-      <div className=" flex flex-col justify-center rounded-3xl bg-white p-6 shadow-xl">
-        <span className=" font-3xl text-3xl">Select Item</span>
+    <div className=" dark g mx-auto  grid min-h-screen gap-10 bg-slate-300 p-20 lg:grid-cols-2 xl:grid-cols-3 xl:place-content-center">
+      <div className=" flex flex-col justify-center rounded-3xl bg-white p-6 shadow-xl dark:bg-black">
+        <span className=" font-3xl text-3xl dark:text-white">Select Item</span>
         <ul>
-          {[1, 2, 3, 4, 5].map((i) => (
-            <li
-              key={i}
-              className="my-2 flex justify-between odd:bg-blue-500 even:bg-yellow-500 "
-            >
-              <span className=" text-gray-500">Grey Chair</span>
-              <span className=" font-semibold">$19</span>
-            </li>
-          ))}
-        </ul>
-        <ul>
-          {["a", "b", "c", ""].map((c, i) => (
-            <li key={i} className="bg-red-500 py-2 empty:hidden">
-              {c}
+          {[1, 2].map((i) => (
+            <li key={i} className="my-2 flex justify-between  ">
+              <span className=" text-gray-500 dark:text-gray-100">
+                Grey Chair
+              </span>
+              <span className=" font-semibold dark:text-gray-100">$19</span>
             </li>
           ))}
         </ul>
@@ -29,9 +21,7 @@ const Tailwind: NextPage = () => {
         </div>
         <button
           className=" mx-auto mt-5 block w-5/6  rounded-xl bg-blue-500 p-3 text-center text-white 
-          hover:bg-teal-500 hover:text-black 
-          focus:bg-red-500
-          active:bg-yellow-500
+          transition-colors hover:bg-teal-400
         "
         >
           Checkout
