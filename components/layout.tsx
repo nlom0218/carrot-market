@@ -16,14 +16,9 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: LayoutProps) => {
   };
   return (
     <div>
-      <div
-        className={cls(
-          !canGoBack ? "items-center justify-center" : "",
-          "fixed top-0 flex w-full max-w-xl border-b bg-white px-4 py-3 text-lg font-medium text-gray-800 shadow-sm"
-        )}
-      >
+      <div className="fixed top-0 flex h-12 w-full max-w-xl items-center justify-center border-b bg-white px-10 text-lg font-medium text-gray-800">
         {canGoBack ? (
-          <button onClick={onClick}>
+          <button onClick={onClick} className=" absolute left-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -40,13 +35,22 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: LayoutProps) => {
             </svg>
           </button>
         ) : null}
-        {title ? <span>{title}</span> : null}
+        {title ? (
+          <span className={cls(canGoBack ? "mx-auto" : "")}>{title}</span>
+        ) : null}
       </div>
       <div className={cls("pt-16", hasTabBar ? "pb-24" : "")}>{children}</div>
       {hasTabBar ? (
         <nav className="fixed bottom-0 flex w-full max-w-xl items-center justify-between border-t bg-white px-10 pb-5 pt-3 text-gray-800">
           <Link href="/">
-            <a className=" flex flex-col items-center space-y-2">
+            <a
+              className={cls(
+                "flex flex-col items-center space-y-2",
+                router.pathname === "/"
+                  ? "text-orange-500"
+                  : "transition-colors hover:text-gray-500"
+              )}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -65,7 +69,14 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: LayoutProps) => {
             </a>
           </Link>
           <Link href="/community">
-            <a className=" flex flex-col items-center space-y-2">
+            <a
+              className={cls(
+                "flex flex-col items-center space-y-2",
+                router.pathname === "/community"
+                  ? "text-orange-500"
+                  : "transition-colors hover:text-gray-500"
+              )}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -84,7 +95,14 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: LayoutProps) => {
             </a>
           </Link>
           <Link href="/chats">
-            <a className=" flex flex-col items-center space-y-2">
+            <a
+              className={cls(
+                "flex flex-col items-center space-y-2",
+                router.pathname === "/chats"
+                  ? "text-orange-500"
+                  : "transition-colors hover:text-gray-500"
+              )}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -103,7 +121,14 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: LayoutProps) => {
             </a>
           </Link>
           <Link href="/streams">
-            <a className=" flex flex-col items-center space-y-2">
+            <a
+              className={cls(
+                "flex flex-col items-center space-y-2",
+                router.pathname === "/streams"
+                  ? "text-orange-500"
+                  : "transition-colors hover:text-gray-500"
+              )}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
@@ -122,7 +147,14 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: LayoutProps) => {
             </a>
           </Link>
           <Link href="/profile">
-            <a className=" flex flex-col items-center space-y-2">
+            <a
+              className={cls(
+                "flex flex-col items-center space-y-2",
+                router.pathname === "/profile"
+                  ? "text-orange-500"
+                  : "transition-colors hover:text-gray-500"
+              )}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"
