@@ -1,7 +1,15 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 
 const Community: NextPage = () => {
+  const router = useRouter();
+  const onClick = () => {
+    router.push("/community/123");
+  };
+  const onClickWrite = () => {
+    router.push("/community/write");
+  };
   return (
     <Layout title="동네생활" hasTabBar>
       <div className="space-y-4  divide-y-[2px]">
@@ -9,6 +17,7 @@ const Community: NextPage = () => {
           <div
             className="flex cursor-pointer flex-col items-start pt-4"
             key={i}
+            onClick={onClick}
           >
             <span className="ml-4 flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs text-gray-800">
               동네질문
@@ -59,7 +68,10 @@ const Community: NextPage = () => {
             </div>
           </div>
         ))}
-        <button className="fixed right-5 bottom-24 cursor-pointer rounded-full border-transparent bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500">
+        <button
+          onClick={onClickWrite}
+          className="fixed right-5 bottom-24 cursor-pointer rounded-full border-transparent bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500"
+        >
           <svg
             className="h-6 w-6"
             fill="none"

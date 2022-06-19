@@ -1,10 +1,15 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 
 const Profile: NextPage = () => {
+  const router = useRouter();
+  const onClick = (sort: string) => {
+    router.push(`/profile/${sort}`);
+  };
   return (
     <Layout title="나의 캐럿" hasTabBar>
-      <div className="py-10 px-4">
+      <div className="px-4 pb-10">
         <div className="flex items-center space-x-3">
           <div className="h-16 w-16 rounded-full bg-slate-400" />
           <div className="flex flex-col">
@@ -13,7 +18,10 @@ const Profile: NextPage = () => {
           </div>
         </div>
         <div className="mt-10 flex justify-around">
-          <div className="flex cursor-pointer flex-col items-center">
+          <div
+            onClick={() => onClick("sold")}
+            className="flex cursor-pointer flex-col items-center"
+          >
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white">
               <svg
                 className="h-6 w-6"
@@ -34,7 +42,10 @@ const Profile: NextPage = () => {
               판매내역
             </span>
           </div>
-          <div className="flex cursor-pointer flex-col items-center">
+          <div
+            className="flex cursor-pointer flex-col items-center"
+            onClick={() => onClick("bought")}
+          >
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white">
               <svg
                 className="h-6 w-6"
@@ -55,7 +66,10 @@ const Profile: NextPage = () => {
               구매내역
             </span>
           </div>
-          <div className="flex cursor-pointer flex-col items-center">
+          <div
+            className="flex cursor-pointer flex-col items-center"
+            onClick={() => onClick("loved")}
+          >
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white">
               <svg
                 className="h-6 w-6"

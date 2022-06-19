@@ -19,7 +19,7 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: LayoutProps) => {
       <div
         className={cls(
           !canGoBack ? "items-center justify-center" : "",
-          "fixed top-0 flex w-full max-w-xl border-b bg-white px-4 py-3 text-lg font-medium text-gray-800"
+          "fixed top-0 flex w-full max-w-xl border-b bg-white px-4 py-3 text-lg font-medium text-gray-800 shadow-sm"
         )}
       >
         {canGoBack ? (

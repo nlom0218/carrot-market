@@ -1,19 +1,34 @@
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import Layout from "../../components/layout";
 
 const Live: NextPage = () => {
+  const router = useRouter();
+  const onClickLive = () => {
+    router.push("/streams/123");
+  };
+  const onClickCreate = () => {
+    router.push("/streams/create");
+  };
   return (
     <Layout title="라이브" hasTabBar>
       <div className="space-y-4 divide-y-[1px]">
         {[1, 2, 3, 4, 5].map((_, i) => (
-          <div key={i} className="px-4 pt-4">
+          <div
+            key={i}
+            className="cursor-pointer px-4 pt-4"
+            onClick={onClickLive}
+          >
             <div className="aspect-video w-full rounded-md bg-slate-300 shadow-sm" />
             <h3 className="mt-2 text-xl font-bold text-gray-700">
               Let's try potatos
             </h3>
           </div>
         ))}
-        <button className="fixed right-5 bottom-24 cursor-pointer rounded-full border-transparent bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500">
+        <button
+          onClick={onClickCreate}
+          className="fixed right-5 bottom-24 cursor-pointer rounded-full border-transparent bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"

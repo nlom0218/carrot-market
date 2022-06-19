@@ -1,6 +1,14 @@
+import { useRouter } from "next/router";
 import Layout from "../components/layout";
 
 const Home = () => {
+  const router = useRouter();
+  const onClickUpload = () => {
+    router.push("/items/upload");
+  };
+  const onClickItem = () => {
+    router.push("/items/123");
+  };
   return (
     <Layout title="홈" hasTabBar>
       <div className="flex flex-col space-y-5">
@@ -8,6 +16,7 @@ const Home = () => {
           <div
             key={i}
             className="flex cursor-pointer justify-between border-b px-4 pb-4"
+            onClick={onClickItem}
           >
             <div className="flex space-x-4">
               <div className="h-20 w-20 rounded-md bg-gray-400" />
@@ -57,7 +66,10 @@ const Home = () => {
             </div>
           </div>
         ))}
-        <button className="fixed right-5 bottom-24 cursor-pointer rounded-full border-transparent bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500">
+        <button
+          onClick={onClickUpload}
+          className="fixed right-5 bottom-24 cursor-pointer rounded-full border-transparent bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500"
+        >
           <svg
             className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
