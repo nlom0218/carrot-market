@@ -1,11 +1,9 @@
 import { useRouter } from "next/router";
+import FloatingButton from "../components/floating-button";
 import Layout from "../components/layout";
 
 const Home = () => {
   const router = useRouter();
-  const onClickUpload = () => {
-    router.push("/items/upload");
-  };
   const onClickItem = () => {
     router.push("/items/123");
   };
@@ -66,10 +64,7 @@ const Home = () => {
             </div>
           </div>
         ))}
-        <button
-          onClick={onClickUpload}
-          className="fixed right-5 bottom-24 cursor-pointer rounded-full border-transparent bg-orange-400 p-4 text-white shadow-xl transition-colors hover:bg-orange-500"
-        >
+        <FloatingButton href={"/items/upload"}>
           <svg
             className="h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +80,7 @@ const Home = () => {
               d="M12 6v6m0 0v6m0-6h6m-6 0H6"
             />
           </svg>
-        </button>
+        </FloatingButton>
       </div>
     </Layout>
   );
