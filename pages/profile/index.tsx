@@ -7,6 +7,9 @@ const Profile: NextPage = () => {
   const onClick = (sort: string) => {
     router.push(`/profile/${sort}`);
   };
+  const onClickEdit = () => {
+    router.push("/profile/edit");
+  };
   return (
     <Layout title="나의 캐럿" hasTabBar>
       <div className="px-4 pb-10">
@@ -14,7 +17,12 @@ const Profile: NextPage = () => {
           <div className="h-16 w-16 rounded-full bg-slate-400" />
           <div className="flex flex-col">
             <span className="font-medium text-gray-900">Steve Jebs</span>
-            <span className="text-sm text-gray-700">Edit profile &rarr;</span>
+            <span
+              onClick={onClickEdit}
+              className="cursor-pointer text-sm text-gray-700"
+            >
+              Edit profile &rarr;
+            </span>
           </div>
         </div>
         <div className="mt-10 flex justify-around">
