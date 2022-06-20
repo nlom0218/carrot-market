@@ -2,10 +2,11 @@ import { NextPage } from "next";
 import Button from "../../components/button";
 import Input from "../../components/input";
 import Layout from "../../components/layout";
+import TextArea from "../../components/textarea";
 
 const Upload: NextPage = () => {
   return (
-    <Layout canGoBack>
+    <Layout canGoBack title="Upload Product">
       <form className="space-y-4 p-4">
         <div>
           <label className="flex h-48  w-full cursor-pointer items-center justify-center rounded-md border-2 border-dashed border-gray-300 text-gray-600 transition-colors hover:border-orange-500 hover:text-orange-500">
@@ -36,20 +37,7 @@ const Upload: NextPage = () => {
           type="text"
           kind="price"
         />
-        <div>
-          <label
-            className=" mb-1 block text-sm font-medium text-gray-700"
-            htmlFor="description"
-          >
-            Description
-          </label>
-
-          <textarea
-            id="description"
-            rows={10}
-            className="mt-1 w-full resize-none rounded-md border-gray-300 shadow-sm focus:border-orange-500 focus:ring-2 focus:ring-orange-500 "
-          />
-        </div>
+        <TextArea name="description" label="Description" />
         <Button text="Upload Item" />
       </form>
     </Layout>
