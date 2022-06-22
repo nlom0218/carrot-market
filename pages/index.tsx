@@ -1,13 +1,8 @@
-import { useRouter } from "next/router";
 import FloatingButton from "../components/floating-button";
 import Item from "../components/items";
 import Layout from "../components/layout";
 
 const Home = () => {
-  const router = useRouter();
-  const onClickItem = () => {
-    router.push("/items/123");
-  };
   return (
     <Layout title="홈" hasTabBar>
       <div className="flex flex-col space-y-5 divide-y">
