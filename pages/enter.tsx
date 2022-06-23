@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Button from "../components/button";
@@ -9,7 +10,7 @@ interface EnterForm {
   phone?: string;
 }
 
-const Enter = () => {
+const Enter: NextPage = () => {
   const { register, watch, reset, handleSubmit } = useForm<EnterForm>();
   const [method, setMethod] = useState<"email" | "phone">("email");
   const onEmailClick = () => {
@@ -22,7 +23,13 @@ const Enter = () => {
   };
   const onVaild = (data: EnterForm) => {
     const { email, phone } = data;
-    console.log(email, phone);
+    fetch("/api/users/enter", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
   };
   return (
     <div className="mt-16 px-4">
