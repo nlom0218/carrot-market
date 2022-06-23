@@ -23,16 +23,11 @@ const Enter: NextPage = () => {
     reset();
     setMethod("phone");
   };
-  const onVaild = (data: EnterForm) => {
-    const { email, phone } = data;
-    fetch("/api/users/enter", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
+  const onVaild = (vaildForm: EnterForm) => {
+    enter(vaildForm);
   };
+  console.log(loading, data, error);
+
   return (
     <div className="mt-16 px-4">
       <h3 className="text-center text-3xl font-bold">Enter to Carrot</h3>
