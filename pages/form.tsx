@@ -32,12 +32,9 @@ export default function Form() {
     // setError("username", { message: "User Token" });
     // reset();
   };
-  const onInvaild = (errors: FieldError) => {
-    console.log(errors);
-  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit, onInvaild)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <input
         {...register("username", {
           required: "Username is required",
