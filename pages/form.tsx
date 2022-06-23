@@ -12,6 +12,7 @@ interface FormTypes {
   username: string;
   password: string;
   email: string;
+  errors?: string;
 }
 
 export default function Form() {
@@ -19,16 +20,21 @@ export default function Form() {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
+    setError,
+    reset,
   } = useForm<FormTypes>({
     mode: "onChange",
   });
+
   const onSubmit = (data: FormTypes) => {
     console.log("im vaild bby");
+    // setError("username", { message: "User Token" });
+    // reset();
   };
   const onInvaild = (errors: FieldError) => {
     console.log(errors);
   };
-  console.log(errors);
 
   return (
     <form onSubmit={handleSubmit(onSubmit, onInvaild)}>
