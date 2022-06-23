@@ -15,7 +15,11 @@ interface FormTypes {
 }
 
 export default function Form() {
-  const { register, handleSubmit } = useForm<FormTypes>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormTypes>({
     mode: "onChange",
   });
   const onSubmit = (data: FormTypes) => {
@@ -24,6 +28,7 @@ export default function Form() {
   const onInvaild = (errors: FieldError) => {
     console.log(errors);
   };
+  console.log(errors);
 
   return (
     <form onSubmit={handleSubmit(onSubmit, onInvaild)}>
@@ -38,13 +43,24 @@ export default function Form() {
         type="text"
         placeholder="Username"
       />
+      {errors?.username?.message}
       <input
         {...register("email", {
           required: "Email is required",
+          validate: {
+            notGmail: (value) =>
+              !value.includes("@gmail.com") ? true : "Gmail is not allowed",
+          },
         })}
         type="email"
         placeholder="Email"
+        className={`${
+          Boolean(errors?.email?.message)
+            ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+            : ""
+        }`}
       />
+      {errors?.email?.message}
       <input
         {...register("password", {
           required: "Password is required",
