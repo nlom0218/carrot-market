@@ -1,6 +1,6 @@
-import FloatingButton from "../components/floating-button";
-import Item from "../components/items";
-import Layout from "../components/layout";
+import FloatingButton from "@components/floating-button";
+import Item from "@components/items";
+import Layout from "@components/layout";
 
 const Home = () => {
   return (

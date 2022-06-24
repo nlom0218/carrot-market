@@ -1,10 +1,10 @@
+import Button from "@components/button";
+import Input from "@components/input";
+import useMutation from "@libs/client/useMutation";
+import { cls } from "@libs/client/utils";
 import { NextPage } from "next";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Button from "../components/button";
-import Input from "../components/input";
-import useMutation from "../libs/client/useMutation";
-import { cls } from "../libs/client/utils";
 
 interface EnterForm {
   email?: string;
@@ -26,7 +26,6 @@ const Enter: NextPage = () => {
   const onVaild = (vaildForm: EnterForm) => {
     enter(vaildForm);
   };
-  console.log(loading, data, error);
 
   return (
     <div className="mt-16 px-4">

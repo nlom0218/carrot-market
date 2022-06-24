@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import FloatingButton from "../../components/floating-button";
-import Layout from "../../components/layout";
+import FloatingButton from "@components/floating-button";
+import Layout from "@components/layout";
 
 const Live: NextPage = () => {
   const router = useRouter();
