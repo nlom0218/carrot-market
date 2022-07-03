@@ -7,56 +7,27 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     body: { email, phone },
   } = req;
 
-  const payload = phone ? { phone: +phone } : { email };
+  const user = phone ? { phone: +phone } : { email };
+  const payload = Math.floor(100000 + Math.random() * 900000) + "";
 
-  const user = await client.user.upsert({
-    where: {
-      ...payload,
+  const token = await client.token.create({
+    data: {
+      payload,
+      user: {
+        connectOrCreate: {
+          where: {
+            ...user,
+          },
+          create: {
+            name: "Anonymous",
+            ...user,
+          },
+        },
+      },
     },
-    create: {
-      name: "Anonymous",
-      ...payload,
-    },
-    update: {},
   });
 
-  // if (email) {
-  //   user = await client.user.findUnique({
-  //     where: { email },
-  //   });
-  //   if (user) {
-  //     console.log("found it");
-  //   }
-  //   if (!user) {
-  //     console.log("Did not find. Create user");
-  //     user = await client.user.create({
-  //       data: {
-  //         name: "Anonymous",
-  //         email,
-  //       },
-  //     });
-  //   }
-  // }
-  // if (phone) {
-  //   console.log(phone);
-
-  //   user = await client.user.findUnique({
-  //     where: { phone: +phone },
-  //   });
-  //   if (user) {
-  //     console.log("found it");
-  //   }
-  //   if (!user) {
-  //     console.log("Did not find. Create user");
-  //     user = await client.user.create({
-  //       data: {
-  //         name: "Anonymous",
-  //         phone: +phone,
-  //       },
-  //     });
-  //   }
-  // }
-  console.log(user);
+  console.log(token);
 
   res.json({ ok: true, data: "dsjldfjs" });
   res.status(200).end();
