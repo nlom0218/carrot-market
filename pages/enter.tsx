@@ -84,7 +84,6 @@ const Enter: NextPage = () => {
           </form>
         ) : (
           <>
-            {" "}
             <div className=" flex flex-col items-center">
               <h5 className="text-sm font-medium text-gray-500">
                 Enter using:
