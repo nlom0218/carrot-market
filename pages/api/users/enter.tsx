@@ -13,7 +13,7 @@ async function handler(
     body: { email, phone },
   } = req;
 
-  const user = phone ? { phone: +phone } : email ? { email } : null;
+  const user = phone ? { phone } : email ? { email } : null;
 
   if (!user) return res.status(400).json({ ok: false });
 
@@ -50,4 +50,8 @@ async function handler(
   });
 }
 
-export default withHandler("POST", handler);
+export default withHandler({
+  method: "POST",
+  handler,
+  isPrivate: false,
+});
