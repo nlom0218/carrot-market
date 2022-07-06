@@ -30,6 +30,7 @@ export default function Input({
       {kind === "text" ? (
         <div className="relative flex items-center rounded-md shadow-sm">
           <input
+            autoComplete="off"
             {...register}
             className="foucs:outline-none w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400
               shadow-sm focus:border-orange-500 focus:ring-orange-500
@@ -47,6 +48,7 @@ export default function Input({
             <span className="text-sm text-gray-500">$</span>
           </div>
           <input
+            autoComplete="off"
             className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 pl-7 placeholder-gray-400 shadow-sm focus:border-orange-500 focus:outline-none focus:ring-orange-500"
             id={name}
             {...rest}
@@ -69,6 +71,7 @@ export default function Input({
             +82
           </span>
           <input
+            autoComplete="off"
             id={name}
             {...rest}
             {...register}
